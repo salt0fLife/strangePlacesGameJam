@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dk1on3xaknlbp"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_70tj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo8ui"]
+size = Vector2(146.5, 40.875)
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+script = ExtResource("1_70tj6")
+ground_height = -50.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1983215661]
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 137.0
+offset_bottom = 58.0
+color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=876387398]
+offset_left = -10.0
+offset_top = -33.0
+offset_right = 137.0
+offset_bottom = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093848566]
+position = Vector2(63.75, 38)
+shape = SubResource("RectangleShape2D_mo8ui")

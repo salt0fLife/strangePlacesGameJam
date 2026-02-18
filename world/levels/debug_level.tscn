@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cikylx5mf7sy3"]
+
+[ext_resource type="PackedScene" uid="uid://bn5jvwnfexjd" path="res://player/player.tscn" id="1_mo8ui"]
+[ext_resource type="PackedScene" uid="uid://cukpg4oahkuk6" path="res://world/building_blocks/test_platform.tscn" id="2_ie0a5"]
+[ext_resource type="PackedScene" uid="uid://udbtkhi8e3nn" path="res://world/building_blocks/test_platform_short.tscn" id="3_ie0a5"]
+[ext_resource type="PackedScene" uid="uid://dk1on3xaknlbp" path="res://world/building_blocks/test_platform_big.tscn" id="4_cfcve"]
+[ext_resource type="PackedScene" uid="uid://dy60o5q644eq7" path="res://world/building_blocks/test_platform_cylinder.tscn" id="5_ytmah"]
+
+[node name="debug_level" type="Node2D" unique_id=2122345902]
+
+[node name="player" parent="." unique_id=805205783 instance=ExtResource("1_mo8ui")]
+
+[node name="testPlatform4" parent="." unique_id=17462114 instance=ExtResource("2_ie0a5")]
+position = Vector2(299, -34)
+
+[node name="testPlatform5" parent="." unique_id=741205537 instance=ExtResource("2_ie0a5")]
+position = Vector2(207, 11)
+
+[node name="testPlatform6" parent="." unique_id=1187548209 instance=ExtResource("2_ie0a5")]
+position = Vector2(187, -27)
+
+[node name="testPlatform7" parent="." unique_id=2133368180 instance=ExtResource("2_ie0a5")]
+position = Vector2(237, -55)
+
+[node name="testPlatform8" parent="." unique_id=874441598 instance=ExtResource("3_ie0a5")]
+position = Vector2(143, -7)
+
+[node name="testPlatform9" parent="." unique_id=1759720789 instance=ExtResource("3_ie0a5")]
+position = Vector2(347, 5)
+
+[node name="testPlatform10" parent="." unique_id=1655524933 instance=ExtResource("3_ie0a5")]
+position = Vector2(221, 66)
+
+[node name="testPlatform11" parent="." unique_id=610152055 instance=ExtResource("4_cfcve")]
+position = Vector2(22, 83)
+
+[node name="testPlatform12" parent="." unique_id=207915298 instance=ExtResource("4_cfcve")]
+position = Vector2(363, -62)
+
+[node name="testPlatform13" parent="." unique_id=979958196 instance=ExtResource("5_ytmah")]
+position = Vector2(496, -13)
+
+[node name="testPlatform14" parent="." unique_id=941634508 instance=ExtResource("5_ytmah")]
+position = Vector2(412, 27)
