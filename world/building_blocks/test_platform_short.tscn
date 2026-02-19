@@ -1,27 +1,27 @@
-[gd_scene format=3 uid="uid://udbtkhi8e3nn"]
+[gd_scene load_steps=3 format=3 uid="uid://udbtkhi8e3nn"]
 
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_7tqs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo8ui"]
-size = Vector2(37, 19.5)
+size = Vector2(37.125, 19.6875)
 
-[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+[node name="testPlatform4" type="StaticBody2D" groups=["wall"]]
 script = ExtResource("1_7tqs4")
 ground_height = -25.0
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1983215661]
+[node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -10.0
 offset_top = -12.0
 offset_right = 27.0
 offset_bottom = 33.0
 color = Color(0.48178947, 0.48178947, 0.48178947, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=876387398]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -10.0
 offset_top = -12.0
 offset_right = 27.0
 offset_bottom = 8.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093848566]
-position = Vector2(8, 23)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 23)
 shape = SubResource("RectangleShape2D_mo8ui")
