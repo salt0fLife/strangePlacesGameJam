@@ -1,9 +1,11 @@
-[gd_scene format=3 uid="uid://cukpg4oahkuk6"]
+[gd_scene load_steps=4 format=3 uid="uid://cukpg4oahkuk6"]
 
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_31fna"]
+[ext_resource type="Texture2D" uid="uid://1qkrlpwe8aeq" path="res://Assets/Sprites/Blocks/Green Block-0004.png" id="2_jep1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo8ui"]
 size = Vector2(37, 19.5)
+
 
 [node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
 z_index = 50
@@ -12,8 +14,8 @@ script = ExtResource("1_31fna")
 ground_height = -50.0
 clipping_enabled = true
 
+
 [node name="clipMask" type="ColorRect" parent="." unique_id=1983215661]
-clip_children = 1
 offset_left = -10.0
 offset_top = -12.0
 offset_right = 27.0
@@ -36,6 +38,13 @@ offset_top = -12.0
 offset_right = 27.0
 offset_bottom = 8.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093848566]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 48)
 shape = SubResource("RectangleShape2D_mo8ui")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -49.0
+offset_top = -59.0
+offset_right = 70.0
+offset_bottom = 87.0
+texture = ExtResource("2_jep1m")

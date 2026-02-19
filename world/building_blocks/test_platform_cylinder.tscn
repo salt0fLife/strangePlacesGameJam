@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://dy60o5q644eq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dy60o5q644eq7"]
 
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_l7o1w"]
+[ext_resource type="Texture2D" uid="uid://mp88vy37anvh" path="res://Assets/Sprites/Blocks/3d Teal Block.png" id="2_2i15i"]
 
 [sub_resource type="Gradient" id="Gradient_l7o1w"]
 interpolation_mode = 1
@@ -20,7 +21,8 @@ collision_layer = 5
 script = ExtResource("1_l7o1w")
 ground_height = -66.0
 
-[node name="ColorRect3" type="TextureRect" parent="." unique_id=1217241665]
+[node name="ColorRect3" type="TextureRect" parent="."]
+visible = false
 modulate = Color(0.48235294, 0.48235294, 0.48235294, 1)
 offset_left = -10.0
 offset_top = 41.0
@@ -29,14 +31,16 @@ offset_bottom = 75.0
 texture = SubResource("GradientTexture2D_2i15i")
 expand_mode = 1
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1983215661]
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -10.0
 offset_top = -12.0
 offset_right = 27.0
 offset_bottom = 58.0
 color = Color(0.48178947, 0.48178947, 0.48178947, 1)
 
-[node name="ColorRect" type="TextureRect" parent="." unique_id=919025796]
+[node name="ColorRect" type="TextureRect" parent="."]
+visible = false
 offset_left = -10.0
 offset_top = -27.0
 offset_right = 27.0
@@ -44,6 +48,13 @@ offset_bottom = 7.0
 texture = SubResource("GradientTexture2D_2i15i")
 expand_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1093848566]
-position = Vector2(8, 58)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -38.0
+offset_top = -76.0
+offset_right = 102.0
+offset_bottom = 122.0
+texture = ExtResource("2_2i15i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 61)
 shape = SubResource("CircleShape2D_bxpxu")

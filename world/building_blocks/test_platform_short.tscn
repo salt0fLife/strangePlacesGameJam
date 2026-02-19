@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://udbtkhi8e3nn"]
+[gd_scene load_steps=3 format=3 uid="uid://udbtkhi8e3nn"]
 
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_7tqs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo8ui"]
-size = Vector2(37, 19.5)
+size = Vector2(37.125, 19.6875)
 
 [node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
 collision_layer = 5

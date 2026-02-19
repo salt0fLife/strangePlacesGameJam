@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bn5jvwnfexjd"]
+[gd_scene load_steps=6 format=3 uid="uid://bn5jvwnfexjd"]
 
 [ext_resource type="Script" uid="uid://dh0215rei81k6" path="res://scripts/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://btpct583fml6n" path="res://Assets/Sprites/Player/Player.png" id="2_rkbax"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kqu6x"]
 
@@ -13,7 +14,7 @@ radius = 100.0
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oul6g"]
 blend_mode = 3
 
-[node name="player" type="CharacterBody2D" unique_id=805205783 groups=["player"]]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_oul6g")
 camera_follow_speed = 1.0
@@ -21,6 +22,8 @@ camera_dead_zone = 40.0
 camera_dampening = 10.0
 camera_movement_effect = 0.3
 
+
+=======
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095635682]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_kqu6x")
@@ -42,9 +45,9 @@ shape = SubResource("CircleShape2D_rkbax")
 
 [node name="graphics" type="Node2D" parent="." unique_id=1660909222]
 
-[node name="shadow" type="Node2D" parent="graphics" unique_id=1190137418]
+[node name="shadow" type="Node2D" parent="graphics"]
 
-[node name="colorRect" type="ColorRect" parent="graphics/shadow" unique_id=1774154051]
+[node name="colorRect" type="ColorRect" parent="graphics/shadow"]
 material = SubResource("CanvasItemMaterial_oul6g")
 offset_left = -14.0
 offset_top = 5.0
@@ -52,16 +55,24 @@ offset_right = 14.0
 offset_bottom = 17.0
 color = Color(0.7162962, 0.7162962, 0.7162962, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="graphics" unique_id=403884699]
+[node name="Sprite2D" type="Sprite2D" parent="graphics"]
 
-[node name="placeholder" type="ColorRect" parent="graphics" unique_id=1762736947]
+[node name="placeholder" type="ColorRect" parent="graphics"]
+visible = false
 offset_left = -10.0
 offset_top = -30.0
 offset_right = 10.0
 offset_bottom = 10.0
 color = Color(0.55225843, 0.3459333, 0.6577635, 1)
 
-[node name="cameraHandler" type="Node2D" parent="graphics" unique_id=1069777500]
+[node name="Sprite2D2" type="Sprite2D" parent="graphics"]
+position = Vector2(1, 21)
+scale = Vector2(2, 2)
+texture = ExtResource("2_rkbax")
+hframes = 14
+
+[node name="cameraHandler" type="Node2D" parent="graphics"]
 top_level = true
+
 
 [node name="Camera2D" type="Camera2D" parent="graphics/cameraHandler" unique_id=152757788]
