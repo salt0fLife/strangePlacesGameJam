@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cikylx5mf7sy3"]
+[gd_scene format=3 uid="uid://cikylx5mf7sy3"]
 
 [ext_resource type="PackedScene" uid="uid://bn5jvwnfexjd" path="res://player/player.tscn" id="1_mo8ui"]
 [ext_resource type="PackedScene" uid="uid://cukpg4oahkuk6" path="res://world/building_blocks/test_platform.tscn" id="2_ie0a5"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://b4aafjkj3rws7" path="res://world/building_blocks/test_platform_fancy.tscn" id="6_aeus8"]
 [ext_resource type="PackedScene" uid="uid://dc0otadlst54c" path="res://world/building_blocks/test_death_floor.tscn" id="7_ab7t1"]
 
-[node name="debug_level" type="Node2D"]
+[node name="debug_level" type="Node2D" unique_id=2122345902]
 
-[node name="player" parent="." instance=ExtResource("1_mo8ui")]
+[node name="player" parent="." unique_id=805205783 instance=ExtResource("1_mo8ui")]
 
 [node name="testPlatform4" parent="." unique_id=17462114 instance=ExtResource("2_ie0a5")]
 z_index = 180
