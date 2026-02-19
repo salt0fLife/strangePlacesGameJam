@@ -5,40 +5,159 @@
 [ext_resource type="PackedScene" uid="uid://udbtkhi8e3nn" path="res://world/building_blocks/test_platform_short.tscn" id="3_ie0a5"]
 [ext_resource type="PackedScene" uid="uid://dk1on3xaknlbp" path="res://world/building_blocks/test_platform_big.tscn" id="4_cfcve"]
 [ext_resource type="PackedScene" uid="uid://dy60o5q644eq7" path="res://world/building_blocks/test_platform_cylinder.tscn" id="5_ytmah"]
+[ext_resource type="PackedScene" uid="uid://b4aafjkj3rws7" path="res://world/building_blocks/test_platform_fancy.tscn" id="6_aeus8"]
+[ext_resource type="PackedScene" uid="uid://dc0otadlst54c" path="res://world/building_blocks/test_death_floor.tscn" id="7_ab7t1"]
 
 [node name="debug_level" type="Node2D" unique_id=2122345902]
 
 [node name="player" parent="." unique_id=805205783 instance=ExtResource("1_mo8ui")]
 
 [node name="testPlatform4" parent="." unique_id=17462114 instance=ExtResource("2_ie0a5")]
-position = Vector2(299, -34)
+z_index = 180
+position = Vector2(407, 130)
 
 [node name="testPlatform5" parent="." unique_id=741205537 instance=ExtResource("2_ie0a5")]
-position = Vector2(207, 11)
+z_index = 83
+position = Vector2(595, 21)
 
 [node name="testPlatform6" parent="." unique_id=1187548209 instance=ExtResource("2_ie0a5")]
-position = Vector2(187, -27)
+z_index = 189
+position = Vector2(295, 135)
+ground_height = -54.0
+
+[node name="testPlatform24" parent="." unique_id=787361931 instance=ExtResource("2_ie0a5")]
+z_index = -4
+position = Vector2(119, -54)
 
 [node name="testPlatform7" parent="." unique_id=2133368180 instance=ExtResource("2_ie0a5")]
+z_index = -5
 position = Vector2(237, -55)
 
-[node name="testPlatform8" parent="." unique_id=874441598 instance=ExtResource("3_ie0a5")]
-position = Vector2(143, -7)
-
-[node name="testPlatform9" parent="." unique_id=1759720789 instance=ExtResource("3_ie0a5")]
-position = Vector2(347, 5)
-
 [node name="testPlatform10" parent="." unique_id=1655524933 instance=ExtResource("3_ie0a5")]
+z_index = 95
 position = Vector2(221, 66)
 
 [node name="testPlatform11" parent="." unique_id=610152055 instance=ExtResource("4_cfcve")]
+z_index = 133
 position = Vector2(22, 83)
 
 [node name="testPlatform12" parent="." unique_id=207915298 instance=ExtResource("4_cfcve")]
-position = Vector2(363, -62)
+z_index = 298
+position = Vector2(196, 248)
+
+[node name="testPlatform18" parent="." unique_id=1439631819 instance=ExtResource("4_cfcve")]
+z_index = 46
+position = Vector2(-52, -4)
+
+[node name="testPlatform19" parent="." unique_id=912175594 instance=ExtResource("4_cfcve")]
+z_index = 87
+position = Vector2(-52, 37)
+
+[node name="testPlatform20" parent="." unique_id=133564638 instance=ExtResource("4_cfcve")]
+z_index = 5
+position = Vector2(-52, -45)
+
+[node name="testPlatform26" parent="." unique_id=419801036 instance=ExtResource("4_cfcve")]
+z_index = -56
+position = Vector2(-52, -106)
+
+[node name="testPlatform36" parent="." unique_id=1145824603 instance=ExtResource("4_cfcve")]
+z_index = -24
+position = Vector2(121, -142)
+ground_height = -118.0
+
+[node name="testPlatform21" parent="." unique_id=970638242 instance=ExtResource("4_cfcve")]
+z_index = 46
+position = Vector2(-199, -4)
+
+[node name="testPlatform22" parent="." unique_id=945982746 instance=ExtResource("4_cfcve")]
+z_index = 87
+position = Vector2(-199, 37)
+
+[node name="testPlatform23" parent="." unique_id=954173408 instance=ExtResource("4_cfcve")]
+z_index = 5
+position = Vector2(-199, -45)
+
+[node name="testPlatform30" parent="." unique_id=907247500 instance=ExtResource("4_cfcve")]
+z_index = 184
+position = Vector2(121, -183)
+ground_height = -367.0
+added_height = -4.0
+
+[node name="testPlatform27" parent="." unique_id=1494766097 instance=ExtResource("4_cfcve")]
+z_index = -85
+position = Vector2(-207, -215)
+ground_height = -130.0
+added_height = -8.0
+
+[node name="testPlatform28" parent="." unique_id=1165107305 instance=ExtResource("4_cfcve")]
+z_index = -18
+position = Vector2(-199, -92)
+ground_height = -74.0
+
+[node name="testPlatform29" parent="." unique_id=711075770 instance=ExtResource("4_cfcve")]
+z_index = -41
+position = Vector2(-437, -91)
+
+[node name="testPlatform38" parent="." unique_id=1161088061 instance=ExtResource("4_cfcve")]
+z_index = -71
+position = Vector2(-383, -145)
+ground_height = -74.0
 
 [node name="testPlatform13" parent="." unique_id=979958196 instance=ExtResource("5_ytmah")]
+z_index = 53
 position = Vector2(496, -13)
 
 [node name="testPlatform14" parent="." unique_id=941634508 instance=ExtResource("5_ytmah")]
+z_index = 93
 position = Vector2(412, 27)
+
+[node name="testPlatform15" parent="." unique_id=428915026 instance=ExtResource("6_aeus8")]
+z_index = 36
+position = Vector2(850, -55)
+
+[node name="testPlatform17" parent="." unique_id=1123925389 instance=ExtResource("6_aeus8")]
+z_index = 175
+position = Vector2(651, 106)
+
+[node name="testPlatform25" parent="." unique_id=175821243 instance=ExtResource("6_aeus8")]
+z_index = 131
+position = Vector2(-62, 62)
+
+[node name="testPlatform31" parent="." unique_id=1170993151 instance=ExtResource("6_aeus8")]
+z_index = 159
+position = Vector2(-33, 90)
+
+[node name="testPlatform32" parent="." unique_id=1941308212 instance=ExtResource("6_aeus8")]
+z_index = 188
+position = Vector2(-62, 119)
+
+[node name="testPlatform33" parent="." unique_id=804197033 instance=ExtResource("6_aeus8")]
+z_index = 163
+position = Vector2(-91, 90)
+ground_height = -73.0
+added_height = -4.0
+
+[node name="testPlatform34" parent="." unique_id=1328771352 instance=ExtResource("6_aeus8")]
+z_index = 485
+position = Vector2(-127, -31)
+ground_height = -361.0
+added_height = -4.0
+
+[node name="testPlatform35" parent="." unique_id=2144607202 instance=ExtResource("6_aeus8")]
+z_index = 1311
+position = Vector2(-23, -27)
+ground_height = -909.0
+added_height = -16.0
+
+[node name="testPlatform16" parent="." unique_id=1216267762 instance=ExtResource("7_ab7t1")]
+z_index = 6
+position = Vector2(582, -19)
+
+[node name="testPlatform9" parent="." unique_id=1759720789 instance=ExtResource("3_ie0a5")]
+z_index = 57
+position = Vector2(759, 26)
+
+[node name="testPlatform8" parent="." unique_id=874441598 instance=ExtResource("3_ie0a5")]
+z_index = 37
+position = Vector2(654, 6)

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://t40uu8iv4nja"]
+
+[ext_resource type="Script" uid="uid://bc416518bhqks" path="res://scripts/main_menu.gd" id="1_reecx"]
+[ext_resource type="Shader" uid="uid://cnlnyuxqs8ql1" path="res://Assets/shaders/main_menu_background.gdshader" id="2_xkvi0"]
+[ext_resource type="Theme" uid="uid://ddvbc7u8okx0u" path="res://Assets/themes/default_theme.tres" id="3_rhnsr"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xkvi0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rhnsr"]
+noise = SubResource("FastNoiseLite_xkvi0")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rhnsr"]
+shader = ExtResource("2_xkvi0")
+shader_parameter/noise_1 = SubResource("NoiseTexture2D_rhnsr")
+shader_parameter/color_1 = Color(0, 0.5217171, 0.2787095, 1)
+shader_parameter/color_2 = Color(0.4748475, 1.3957917e-06, 0.29454243, 1)
+shader_parameter/speed = 0.2
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_laybc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhnsr"]
+bg_color = Color(0.18122104, 0.12864241, 0.16857076, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2513325, 0.079462, 0.08541038, 1)
+
+[sub_resource type="Animation" id="Animation_laybc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackout:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rhnsr"]
+resource_name = "intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blackout:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 660)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_laybc"]
+_data = {
+&"RESET": SubResource("Animation_laybc"),
+&"intro": SubResource("Animation_rhnsr")
+}
+
+[node name="MainMenu" type="Control" unique_id=1713652702]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_reecx")
+
+[node name="background" type="TextureRect" parent="." unique_id=921053191]
+material = SubResource("ShaderMaterial_rhnsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_laybc")
+
+[node name="buttonPanel" type="PanelContainer" parent="." unique_id=381173612]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -24.5
+offset_right = 54.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rhnsr")
+
+[node name="buttonHandler" type="VBoxContainer" parent="buttonPanel" unique_id=1792283188]
+layout_mode = 2
+
+[node name="play" type="Button" parent="buttonPanel/buttonHandler" unique_id=1340425965]
+layout_mode = 2
+theme = ExtResource("3_rhnsr")
+text = "PLAY"
+
+[node name="settings" type="Button" parent="buttonPanel/buttonHandler" unique_id=1182109421]
+layout_mode = 2
+theme = ExtResource("3_rhnsr")
+text = "settings"
+
+[node name="credits" type="Button" parent="buttonPanel/buttonHandler" unique_id=1126404609]
+layout_mode = 2
+theme = ExtResource("3_rhnsr")
+text = "credits"
+
+[node name="quit" type="Button" parent="buttonPanel/buttonHandler" unique_id=1943428621]
+layout_mode = 2
+theme = ExtResource("3_rhnsr")
+text = "quit"
+
+[node name="blackout" type="ColorRect" parent="." unique_id=61312204]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.00048828125
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1611128624]
+libraries/ = SubResource("AnimationLibrary_laybc")
+
+[connection signal="button_down" from="buttonPanel/buttonHandler/play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="buttonPanel/buttonHandler/settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="buttonPanel/buttonHandler/credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="buttonPanel/buttonHandler/quit" to="." method="_on_quit_button_down"]

@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dh0215rei81k6" path="res://scripts/player.gd" id="1_oul6g"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oul6g"]
-blend_mode = 3
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_kqu6x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oul6g"]
-radius = 5.0990195
+radius = 9.055386
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 100.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oul6g"]
+blend_mode = 3
 
 [node name="player" type="CharacterBody2D" unique_id=805205783 groups=["player"]]
 collision_layer = 2
@@ -17,6 +20,25 @@ camera_follow_speed = 1.0
 camera_dead_zone = 40.0
 camera_dampening = 10.0
 camera_movement_effect = 0.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095635682]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_kqu6x")
+
+[node name="ground_finder" type="Area2D" parent="." unique_id=1771362035]
+position = Vector2(0, 8)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_finder" unique_id=9394029]
+shape = SubResource("CircleShape2D_oul6g")
+
+[node name="walls_finder" type="Area2D" parent="." unique_id=987698571]
+position = Vector2(0, 8)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls_finder" unique_id=1176411717]
+shape = SubResource("CircleShape2D_rkbax")
 
 [node name="graphics" type="Node2D" parent="." unique_id=1660909222]
 
@@ -43,14 +65,3 @@ color = Color(0.55225843, 0.3459333, 0.6577635, 1)
 top_level = true
 
 [node name="Camera2D" type="Camera2D" parent="graphics/cameraHandler" unique_id=152757788]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095635682]
-position = Vector2(0, 8)
-shape = SubResource("CircleShape2D_kqu6x")
-
-[node name="ground_finder" type="Area2D" parent="." unique_id=1771362035]
-position = Vector2(0, 5)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_finder" unique_id=9394029]
-shape = SubResource("CircleShape2D_oul6g")
