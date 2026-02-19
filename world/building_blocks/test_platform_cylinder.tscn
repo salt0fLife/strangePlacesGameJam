@@ -16,7 +16,8 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bxpxu"]
 radius = 18.0
 
-[node name="testPlatform4" type="StaticBody2D" groups=["wall"]]
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+collision_layer = 5
 script = ExtResource("1_l7o1w")
 ground_height = -66.0
 

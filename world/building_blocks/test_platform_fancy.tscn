@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b4aafjkj3rws7"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_g637q"]
+[ext_resource type="Texture2D" uid="uid://dbngq862v0rql" path="res://Assets/Sprites/Blocks/3d Pink Block.png" id="2_g2lfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2lfi"]
+size = Vector2(40.30509, 40.30509)
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+collision_layer = 5
+script = ExtResource("1_g637q")
+ground_height = -69.0
+clipping_enabled = true
+
+[node name="clipMask" type="TextureRect" parent="." unique_id=265617742]
+clip_children = 1
+offset_left = -96.0
+offset_top = -60.0
+offset_right = 109.0
+offset_bottom = 145.0
+texture = ExtResource("2_g2lfi")
+
+[node name="graphics" type="Node2D" parent="clipMask" unique_id=1500390829]
+
+[node name="texture" type="TextureRect" parent="clipMask/graphics" unique_id=1420364530]
+offset_right = 205.0
+offset_bottom = 205.0
+texture = ExtResource("2_g2lfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=598739772]
+position = Vector2(4.7683716e-07, 81)
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_g2lfi")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1471678580]

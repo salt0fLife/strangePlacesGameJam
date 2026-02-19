@@ -33,6 +33,9 @@ func _physics_process(delta):
 	#make sure ground height is up to date
 	update_ground_height()
 	
+	#make sure nearby walls are up to date
+	update_nearby_walls_col()
+	
 	#y position stuff
 	y_pos += y_vel * delta
 	
@@ -67,21 +70,17 @@ func _physics_process(delta):
 	cameraHandler.position += camera_velocity #applies camera velocity
 	z_index = int((global_position.y - y_ground_pos))
 	
-	#smart moving with slopes
-	var col = move_and_collide(velocity*delta,true)
-	if col != null:
-		var hit = col.get_collider()
-		if hit.is_in_group("wall"):
-			if hit.ground_height >= (y_pos-step_height):
-				position += velocity*delta #this is what causes all of the odd problems when working with
-				#mutliple platforms
-				#should replace this with something better in the future
-			else:
-				move_and_slide()
-		else:
-			move_and_slide()
-	else:
-		move_and_slide()
+	#dont have to do anything fancy now
+	move_and_slide()
+
+@onready var walls_finder = $walls_finder
+func update_nearby_walls_col() -> void:
+	for w in walls_finder.get_overlapping_bodies():
+		if w.is_in_group("wall"):
+			if w.ground_height >= (y_pos-step_height): #is lower than player
+				w.set_collision_layer_value(1,false)
+			else: #is higher than player
+				w.set_collision_layer_value(1,true)
 
 func jump() -> void: #jumps
 	y_vel = jump_strength #applies y_vel
@@ -96,11 +95,10 @@ func update_ground_height() -> void:
 			if oa.ground_height < max_height:
 				hit = oa
 				max_height = oa.ground_height
-		
 		y_ground_pos = hit.ground_height
 		dead_ground = hit.dead_ground
 	else:
-		dead_ground = true
+		dead_ground = false
 		y_ground_pos = 0.0
 
 func set_ground_pos(new_ground_pos: float) -> void:
