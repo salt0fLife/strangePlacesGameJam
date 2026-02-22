@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhkcchh1qsy4n"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_6q7k6"]
+[ext_resource type="Texture2D" uid="uid://css4t4p8dpntd" path="res://Assets/Sprites/Blocks/Stone Blocks/Tall Stone.png" id="2_fvsqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnvnj"]
+size = Vector2(50, 24)
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+z_index = 66
+collision_layer = 5
+script = ExtResource("1_6q7k6")
+ground_height = -66.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=283896184]
+scale = Vector2(5, 5)
+texture = ExtResource("2_fvsqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490035669]
+position = Vector2(-6, 22)
+shape = SubResource("RectangleShape2D_xnvnj")

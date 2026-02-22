@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dghlr0fmt5kbl"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_31e6u"]
+[ext_resource type="Texture2D" uid="uid://cg0x2kk3gnr1f" path="res://Assets/Sprites/Blocks/Stone Blocks/Short Stone.png" id="2_707q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux1l4"]
+size = Vector2(75, 39)
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+z_index = 29
+collision_layer = 5
+script = ExtResource("1_31e6u")
+ground_height = -16.0
+
+[node name="ShortStone" type="Sprite2D" parent="." unique_id=1901453860]
+position = Vector2(0, -1)
+scale = Vector2(5, 5)
+texture = ExtResource("2_707q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2078827083]
+position = Vector2(2, 20)
+shape = SubResource("RectangleShape2D_ux1l4")

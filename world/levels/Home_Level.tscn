@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dj2x02shnqkhr"]
+
+[ext_resource type="Texture2D" uid="uid://gxs6q07xsn74" path="res://Assets/Sprites/Maps/Home Map New.png" id="1_jmue7"]
+[ext_resource type="PackedScene" uid="uid://bn5jvwnfexjd" path="res://player/player.tscn" id="2_t73e0"]
+[ext_resource type="PackedScene" uid="uid://dghlr0fmt5kbl" path="res://world/building_blocks/Short_Rock.tscn" id="5_xfbr1"]
+[ext_resource type="PackedScene" uid="uid://bhkcchh1qsy4n" path="res://world/building_blocks/Tall_Rock.tscn" id="6_2tpp0"]
+[ext_resource type="PackedScene" uid="uid://bthiufu21fpq4" path="res://world/building_blocks/Big_Rcok2.tscn" id="7_c0xd0"]
+[ext_resource type="Texture2D" uid="uid://btqordh67wc2f" path="res://Assets/Sprites/Decoration/Big_tree.png" id="9_dmn7f"]
+[ext_resource type="Texture2D" uid="uid://cu0pmt3v2k2hx" path="res://Assets/Sprites/Decoration/Small_Tree.png" id="10_5q10s"]
+
+[node name="HomeLevel" type="Node2D" unique_id=1757644384]
+
+[node name="HomeMapNew" type="Sprite2D" parent="." unique_id=245094669]
+position = Vector2(-101, 34.999996)
+scale = Vector2(5, 5)
+texture = ExtResource("1_jmue7")
+
+[node name="player" parent="." unique_id=805205783 instance=ExtResource("2_t73e0")]
+position = Vector2(-797, 895)
+
+[node name="BigTree" type="Sprite2D" parent="." unique_id=907787272]
+position = Vector2(-702, 512.00006)
+scale = Vector2(5, 5)
+texture = ExtResource("9_dmn7f")
+
+[node name="SmallTree" type="Sprite2D" parent="." unique_id=1299205095]
+position = Vector2(-455, 550)
+scale = Vector2(5, 5)
+texture = ExtResource("10_5q10s")
+
+[node name="testPlatform4" parent="." unique_id=17462114 instance=ExtResource("5_xfbr1")]
+z_index = 476
+position = Vector2(-45, 460)
+
+[node name="testPlatform5" parent="." unique_id=1778352178 instance=ExtResource("5_xfbr1")]
+z_index = 464
+position = Vector2(171, 448)
+
+[node name="testPlatform6" parent="." unique_id=1310612799 instance=ExtResource("6_2tpp0")]
+z_index = 398
+position = Vector2(142, 377)
+
+[node name="testPlatform7" parent="." unique_id=741482483 instance=ExtResource("7_c0xd0")]
+position = Vector2(91, 319)
