@@ -203,14 +203,14 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -270.5
 offset_top = -50.5
-offset_right = 270.5
+offset_right = 418.5
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_gh1pa")
 theme_override_font_sizes/font_size = 100
-text = "name here"
+text = "PIXEL KNIGHT"
 
 [node name="vingette" type="TextureRect" parent="." unique_id=385300349]
 material = SubResource("CanvasItemMaterial_ic6vo")

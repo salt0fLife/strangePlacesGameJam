@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://pa558aagj7si"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_s20fd"]
+[ext_resource type="Texture2D" uid="uid://btqordh67wc2f" path="res://Assets/Sprites/Decoration/Big_tree.png" id="2_wctnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wctnd"]
+radius = 34.928497
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+z_index = 50
+collision_layer = 5
+script = ExtResource("1_s20fd")
+ground_height = -200.0
+
+[node name="BigTree" type="Sprite2D" parent="." unique_id=1577957712]
+position = Vector2(-2, 80.99999)
+scale = Vector2(5, 5)
+texture = ExtResource("2_wctnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586463141]
+position = Vector2(11, 194)
+shape = SubResource("CircleShape2D_wctnd")

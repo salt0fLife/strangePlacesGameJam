@@ -13,9 +13,10 @@ script = ExtResource("1_6q7k6")
 ground_height = -66.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=283896184]
+position = Vector2(2.9999998, 33)
 scale = Vector2(5, 5)
 texture = ExtResource("2_fvsqp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490035669]
-position = Vector2(-6, 22)
+position = Vector2(-3, 55)
 shape = SubResource("RectangleShape2D_xnvnj")

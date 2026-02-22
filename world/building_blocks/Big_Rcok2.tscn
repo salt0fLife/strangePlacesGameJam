@@ -3,34 +3,45 @@
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_x8i8q"]
 [ext_resource type="Texture2D" uid="uid://qffsj8glojrf" path="res://Assets/Sprites/Blocks/Stone Blocks/really_big_stone.png" id="2_kl804"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xpo"]
-size = Vector2(72, 125)
+[sub_resource type="CircleShape2D" id="CircleShape2D_kl804"]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u5xpo"]
+radius = 27.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvtoj"]
-size = Vector2(100.5, 54)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcwk2"]
-size = Vector2(104.5, 83.5)
+size = Vector2(63, 72)
 
 [node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
 z_index = 50
 collision_layer = 5
 script = ExtResource("1_x8i8q")
-ground_height = -50.0
+ground_height = -45.0
 clipping_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=238047718]
+position = Vector2(0, 52.999996)
 scale = Vector2(5, 5)
 texture = ExtResource("2_kl804")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=487352849]
-position = Vector2(-64, 43)
-shape = SubResource("RectangleShape2D_u5xpo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1971729544]
+position = Vector2(-61, 121)
+shape = SubResource("CircleShape2D_kl804")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=410861392]
-position = Vector2(37, -58)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=422476878]
+position = Vector2(59, -9)
+shape = SubResource("CircleShape2D_u5xpo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1643080112]
+position = Vector2(-60.5, 67)
 shape = SubResource("RectangleShape2D_xvtoj")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1507515500]
-position = Vector2(-33, -24)
-shape = SubResource("RectangleShape2D_hcwk2")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1450071282]
+position = Vector2(-29, 32.000015)
+rotation = 0.933516
+shape = SubResource("RectangleShape2D_xvtoj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=1431767560]
+position = Vector2(25, 1)
+rotation = 1.3848039
+shape = SubResource("RectangleShape2D_xvtoj")
