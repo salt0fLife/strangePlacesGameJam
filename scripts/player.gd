@@ -23,7 +23,16 @@ var dead = false
 
 signal player_died
 
+var is_start = false
+
 func _physics_process(delta):
+	if !is_start:
+		is_start = true
+		await get_tree().physics_frame
+	
+	if dead:
+		return
+	
 	var wish_dir = Input.get_vector("left", "right","up","down")
 	velocity = lerp(velocity,wish_dir*speed,delta*acceleration_time)
 	if Input.is_action_just_pressed("jump"):
@@ -70,7 +79,7 @@ func _physics_process(delta):
 	#now for shadow graphics
 	var altitude = (y_ground_pos-y_pos) #how far from the ground you are
 	shadow.position.y = altitude #puts the shadow on the ground
-	var shadow_strength = (1.0 - clamp((altitude/100.0),0.0,1.0)) #shadow not visible after 100 pixel height
+	var shadow_strength = (1.0 - clamp((altitude/300.0),0.0,1.0)) #shadow not visible after 100 pixel height
 	shadow.scale = Vector2(shadow_strength,shadow_strength) #applying shadow strength
 	
 	
@@ -86,8 +95,21 @@ func _physics_process(delta):
 	cameraHandler.position += camera_velocity #applies camera velocity
 	z_index = int((global_position.y - y_ground_pos))
 	
+	var camera_size = get_viewport_rect().size
+	var map_size = Global.map_camera_size - camera_size
+	cameraHandler.position.x = clamp(cameraHandler.position.x, -map_size.x*0.5,map_size.x*0.5)
+	cameraHandler.position.y = clamp(cameraHandler.position.y, -map_size.y*0.5,map_size.y*0.5)
+	
+	
 	#dont have to do anything fancy now
 	move_and_slide()
+
+func tp(location : Vector2, height : float) -> void:
+	y_ground_pos = height
+	#is_start = false
+	position = location
+	update_ground_height()
+	update_nearby_walls_col()
 
 @onready var walls_finder = $walls_finder
 func update_nearby_walls_col() -> void:
@@ -122,5 +144,7 @@ func set_ground_pos(new_ground_pos: float) -> void:
 
 func die():
 	dead = true
+	$AnimationPlayer.play("die")
+	await $AnimationPlayer.animation_finished
 	print("you died")
 	emit_signal("player_died")

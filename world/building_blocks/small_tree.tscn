@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://duepsuvx274tr"]
+
+[ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_hqv11"]
+[ext_resource type="Texture2D" uid="uid://cu0pmt3v2k2hx" path="res://Assets/Sprites/Decoration/Small_Tree.png" id="2_hqv11"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wctnd"]
+radius = 26.476404
+
+[node name="testPlatform4" type="StaticBody2D" unique_id=17462114 groups=["wall"]]
+z_index = 200
+collision_layer = 5
+script = ExtResource("1_hqv11")
+ground_height = -120.0
+
+[node name="SmallTree" type="Sprite2D" parent="." unique_id=597927341]
+position = Vector2(2.9999995, 59.999996)
+scale = Vector2(5, 5)
+texture = ExtResource("2_hqv11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1586463141]
+position = Vector2(3, 121)
+shape = SubResource("CircleShape2D_wctnd")

@@ -21,7 +21,7 @@ void fragment() {
 	if (n_1 > 0.5) {
 		COLOR.rgb = mix(color_2,color_1,n_1);
 	}
-	COLOR.r += gradient(UV);
-	COLOR.g -= gradient(UV)*0.3;
+	//COLOR.r += gradient(UV);
+	//COLOR.g -= gradient(UV)*0.3;
 }
 
