@@ -30,6 +30,22 @@ func _physics_process(delta):
 		if y_pos == y_ground_pos: #can only jump if on floor
 			jump()
 	
+	#Implementing Animation
+	if wish_dir.length() == 0.0:
+		$AnimationPlayer.play("Idle")
+		pass
+	else: 
+		$AnimationPlayer.play("Walk")
+		if wish_dir.x >= 0.0:
+			$graphics/Sprite2D2.flip_h = false
+			pass
+		else: 
+			$graphics/Sprite2D2.flip_h = true 
+	
+			pass
+	
+	
+	
 	#make sure ground height is up to date
 	update_ground_height()
 	

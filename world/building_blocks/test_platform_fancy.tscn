@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b4aafjkj3rws7"]
+[gd_scene load_steps=0 format=3 uid="uid://b4aafjkj3rws7"]
 
 [ext_resource type="Script" uid="uid://bqq4l4wwmuuo3" path="res://scripts/generic_platform.gd" id="1_g637q"]
 [ext_resource type="Texture2D" uid="uid://dbngq862v0rql" path="res://Assets/Sprites/Blocks/3d Pink Block.png" id="2_g2lfi"]
